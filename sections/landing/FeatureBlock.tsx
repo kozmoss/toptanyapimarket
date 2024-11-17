@@ -26,18 +26,15 @@ export default function FeatureBlock() {
             <Grid item sm={10} md={6}>
               <Grid container spacing={1} justifyContent="center">
                 <Grid item xs={12}>
-                  <Typography variant="subtitle1" color="primary">
-                    Mantis nailed it!
-                  </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h2" sx={{ mb: 2 }}>
-                    Why Mantis?
+                    Neden ToptanYapıMarket ?
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="body1">
-                    Customize everything with the Mantis React Material-UI Dashboard Template built with latest MUI v5 component library
+                    Ben Taylanda Ladyboylarla takılarak gündem olup.
                   </Typography>
                 </Grid>
               </Grid>

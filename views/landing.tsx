@@ -143,9 +143,9 @@ export default function Landing() {
           }
         }}
       >
-        <CardMedia
+        {/* <CardMedia
           component="img"
-          image={`/assets/images/landing/bg-mockup-${presetColor}.png`}
+          image={`/assets/images/logo.png`}
           sx={{
             position: 'absolute',
             width: { md: '78%', lg: '70%', xl: '65%' },
@@ -154,12 +154,11 @@ export default function Landing() {
             zIndex: 1,
             display: { xs: 'none', md: 'block' }
           }}
-        />
+        /> */}
         <Hero />
       </Box>
       <FeatureBlock />
       <DemoBlock />
-      <CallToAction />
       <NumberBlock />
       <BrowserBlock />
       <ElementBlock />

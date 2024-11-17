@@ -25,7 +25,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
 // project import
-import Logo from "@/components/logo";
+import logo from "@/assets/images/logo.png";
+import Image from "next/image";
 import IconButton from "@/components/@extended/IconButton";
 import AnimateButton from "@/components/@extended/AnimateButton";
 
@@ -34,6 +35,7 @@ import { ThemeMode } from "@/app/config";
 // assets
 import MenuOutlined from "@ant-design/icons/MenuOutlined";
 import LineOutlined from "@ant-design/icons/LineOutlined";
+import { log } from "console";
 
 // ==============================|| COMPONENTS - APP BAR ||============================== //
 
@@ -93,21 +95,14 @@ export default function Header() {
               alignItems="center"
             >
               <Typography sx={{ textAlign: "left", display: "inline-block" }}>
-                <Logo reverse to="/" />
+                <Image
+                  src={logo}
+                  height={120}
+                  width={120}
+                  alt="toptanlogo"
+                ></Image>
               </Typography>
-              <Chip
-                label={process.env.NEXT_APP_VERSION}
-                variant="outlined"
-                size="small"
-                color="secondary"
-                sx={{
-                  mt: 0.5,
-                  ml: 1,
-                  fontSize: "0.725rem",
-                  height: 20,
-                  "& .MuiChip-label": { px: 0.5 },
-                }}
-              />
+      
             </Stack>
             <Stack
               direction="row"
@@ -126,7 +121,7 @@ export default function Header() {
                 legacyBehavior
               >
                 <Link className="header-link" color="white" underline="none">
-                  Components
+                  Hakkımızda
                 </Link>
               </NextLink>
               <Link
@@ -136,7 +131,7 @@ export default function Header() {
                 target="_blank"
                 underline="none"
               >
-                Documentation
+                İletişim
               </Link>
               <Box sx={{ display: "inline-block" }}>
                 <AnimateButton>
@@ -147,7 +142,7 @@ export default function Header() {
                     color="primary"
                     variant="contained"
                   >
-                    Purchase Now
+                    Tedarikçi Ol / Teklif Al
                   </Button>
                 </AnimateButton>
               </Box>
@@ -161,7 +156,12 @@ export default function Header() {
               }}
             >
               <Typography sx={{ textAlign: "left", display: "inline-block" }}>
-                <Logo reverse to="/" />
+                <Image
+                  src={logo}
+                  height={120}
+                  width={120}
+                  alt="toptanlogo"
+                ></Image>
               </Typography>
               <Stack direction="row" spacing={2} alignItems="center">
                 <NextLink

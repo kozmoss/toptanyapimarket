@@ -33,11 +33,12 @@ export default function NumberBlock() {
                 <Grid container spacing={1}>
                   <Grid item xs={12}>
                     <Typography variant="h4" sx={{ fontWeight: 600 }}>
-                      Pages
+                      Müşteri
                     </Typography>
                   </Grid>
                   <Grid item xs={12}>
-                    <Typography variant="body1">Hand Crafted useful pages with best user experience.</Typography>
+                    <Typography variant="body1">
+                      Bizleri tercih eden müşterilerimiz</Typography>
                   </Grid>
                 </Grid>
               </Grid>
@@ -65,11 +66,11 @@ export default function NumberBlock() {
                 <Grid container spacing={1}>
                   <Grid item xs={12}>
                     <Typography variant="h4" sx={{ fontWeight: 600 }}>
-                      MUI Components
+                     Sevkiyat
                     </Typography>
                   </Grid>
                   <Grid item xs={12}>
-                    <Typography variant="body1">Made using MUI React v5 - A Most popular React Platform.</Typography>
+                    <Typography variant="body1">Fazla noktaya yapılan teslimat</Typography>
                   </Grid>
                 </Grid>
               </Grid>
@@ -90,18 +91,18 @@ export default function NumberBlock() {
             <Grid container spacing={2} alignItems="center">
               <Grid item>
                 <Typography variant="h2" sx={{ minWidth: 80, textAlign: 'right' }}>
-                  5+
+                  39+
                 </Typography>
               </Grid>
               <Grid item xs zeroMinWidth>
                 <Grid container spacing={1}>
                   <Grid item xs={12}>
                     <Typography variant="h4" sx={{ fontWeight: 600 }}>
-                      Conceptual Apps
+                      İş Birliği
                     </Typography>
                   </Grid>
                   <Grid item xs={12}>
-                    <Typography variant="body1">Find out 5+ working apps which suits your React Project.</Typography>
+                    <Typography variant="body1">Markanın ürünleri</Typography>
                   </Grid>
                 </Grid>
               </Grid>

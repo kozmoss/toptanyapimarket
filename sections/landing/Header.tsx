@@ -51,11 +51,11 @@ export default function HeaderPage() {
                     lineHeight: { xs: 1.3, sm: 1.3, md: 1.3 }
                   }}
                 >
-                  <span>Carefully Crafted for your </span>
+                  <span>İhtayacınız Olan Tüm Ürünler </span>
                   <Box component="span" sx={{ color: 'primary.main' }}>
-                    <span>Caring React </span>
+                    <span>Toptan Yapı Market'te </span>
                   </Box>
-                  <span>Project</span>
+                  <span>Hemen Bizimle Alışverişe Başla</span>
                 </Typography>
               </motion.div>
             </Grid>
@@ -70,17 +70,7 @@ export default function HeaderPage() {
                   delay: 0.2
                 }}
               >
-                <Typography
-                  variant="h6"
-                  color="white"
-                  sx={{
-                    fontSize: { xs: '0.875rem', md: '1rem' },
-                    fontWeight: 400,
-                    lineHeight: { xs: 1.4, md: 1.4 }
-                  }}
-                >
-                  Mantis React is a blazing-fast dashboard template built using the MUI React library.
-                </Typography>
+             
               </motion.div>
             </Grid>
             <Grid item xs={12} sx={{ my: 3.25 }}>
@@ -96,28 +86,10 @@ export default function HeaderPage() {
               >
                 <Grid container spacing={2} sx={{ justifyContent: { xs: 'center', md: 'flex-start' } }}>
                   <Grid item>
-                    <AnimateButton>
-                      <NextLink href="/components-overview/buttons" passHref legacyBehavior>
-                        <Button size="large" color="primary" variant="outlined" component={Link} target="_blank">
-                          Explore Components
-                        </Button>
-                      </NextLink>
-                    </AnimateButton>
+                
                   </Grid>
                   <Grid item>
-                    <AnimateButton>
-                      <Button
-                        component={Link}
-                        href="/login"
-                        target="_blank"
-                        size="large"
-                        color="primary"
-                        variant="contained"
-                        startIcon={<EyeOutlined style={{ fontSize: '1.15rem' }} />}
-                      >
-                        Live Preview
-                      </Button>
-                    </AnimateButton>
+            
                   </Grid>
                 </Grid>
               </motion.div>
@@ -133,7 +105,7 @@ export default function HeaderPage() {
                   delay: 0.6
                 }}
               >
-                <Image src={headertechimg} alt="Mantis" width={281} height={49} style={{ zIndex: 9, maxWidth: '100%', height: 'auto' }} />
+              
               </motion.div>
             </Grid>
           </Grid>
