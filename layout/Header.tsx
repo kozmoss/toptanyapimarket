@@ -25,7 +25,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
 // project import
-import logo from "@/assets/images/logo.png";
+import logo from "@/public/assets/images/logo.png"
 import Image from "next/image";
 import IconButton from "@/components/@extended/IconButton";
 import AnimateButton from "@/components/@extended/AnimateButton";
@@ -35,12 +35,12 @@ import { ThemeMode } from "@/app/config";
 // assets
 import MenuOutlined from "@ant-design/icons/MenuOutlined";
 import LineOutlined from "@ant-design/icons/LineOutlined";
-import { log } from "console";
 
 // ==============================|| COMPONENTS - APP BAR ||============================== //
 
 // elevation scroll
-function ElevationScroll({ children, window }: any) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function ElevationScroll({ children, window }:any) {
   const theme = useTheme();
 
   const trigger = useScrollTrigger({
@@ -68,6 +68,7 @@ export default function Header() {
   const [drawerToggle, setDrawerToggle] = useState<boolean>(false);
 
   /** Method called on multiple components with different event types */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const drawerToggler = (open: boolean) => (event: any) => {
     if (
       event.type! === "keydown" &&
@@ -97,8 +98,8 @@ export default function Header() {
               <Typography sx={{ textAlign: "left", display: "inline-block" }}>
                 <Image
                   src={logo}
-                  height={120}
-                  width={120}
+                  height={80}
+                  width={80}
                   alt="toptanlogo"
                 ></Image>
               </Typography>

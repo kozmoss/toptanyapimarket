@@ -3,7 +3,6 @@
 // material-ui
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import CardMedia from "@mui/material/CardMedia";
 import Divider from "@mui/material/Divider";
@@ -16,14 +15,14 @@ import Typography from "@mui/material/Typography";
 import { motion } from "framer-motion";
 
 // project import
-import AnimateButton from "@/components/@extended/AnimateButton";
 import { ThemeDirection, ThemeMode } from "../app/config";
 import useConfig from "@/hooks/useConfig";
 
 // assets
 import LinkedinOutlined from "@ant-design/icons/LinkedinOutlined";
 
-const imgfooterlogo = "assets/images/landing/codedthemes-logo.svg";
+const imgfooterlogo = "/assets/images/logo.png";
+const footerUp = "/assets/images/footerUp.png";
 
 // link - custom style
 const FooterLink = styled(Link)(({ theme }) => ({
@@ -44,7 +43,7 @@ type showProps = {
 
 export default function FooterBlock({ isFull }: showProps) {
   const theme = useTheme();
-  const { mode, presetColor } = useConfig();
+  const { mode } = useConfig();
   const textColor =
     mode === ThemeMode.DARK ? "text.primary" : "background.paper";
 
@@ -58,29 +57,6 @@ export default function FooterBlock({ isFull }: showProps) {
       opacity: "1",
     },
   };
-
-  const frameworks = [
-    {
-      title: "CodeIgniter",
-      link: "https://codedthemes.com/item/mantis-codeigniter-admin-template/",
-    },
-    {
-      title: "React MUI",
-      link: "https://mui.com/store/items/mantis-react-admin-dashboard-template/",
-    },
-    {
-      title: "Angular",
-      link: "https://codedthemes.com/item/mantis-angular-admin-template/",
-    },
-    {
-      title: "Bootstrap 5",
-      link: "https://codedthemes.com/item/mantis-bootstrap-admin-dashboard/",
-    },
-    {
-      title: ".Net",
-      link: "https://codedthemes.com/item/mantis-dotnet-bootstrap-dashboard-template/",
-    },
-  ];
 
   return (
     <>
@@ -109,13 +85,13 @@ export default function FooterBlock({ isFull }: showProps) {
         >
           <CardMedia
             component="img"
-            image={`assets/images/landing/img-footer-${presetColor}.png`}
+            image={footerUp}
             sx={{
               display: { xs: "none", md: "block" },
-              width: "55%",
+              width: "40%",
               maxWidth: 700,
               position: "absolute",
-              top: "-28%",
+              top: "-98%",
               right: 0,
               ...(theme.direction === ThemeDirection.RTL && {
                 transform: "scaleX(-1)",
@@ -123,32 +99,6 @@ export default function FooterBlock({ isFull }: showProps) {
               }),
             }}
           />
-          <Container>
-            <Grid
-              container
-              alignItems="center"
-              justifyContent="space-between"
-              spacing={2}
-            >
-              <Grid
-                item
-                xs={12}
-                md={6}
-                sx={{ position: "relative", zIndex: 1 }}
-              >
-                <Grid
-                  container
-                  spacing={2}
-                  sx={{
-                    [theme.breakpoints.down("md")]: {
-                      pr: 0,
-                      textAlign: "center",
-                    },
-                  }}
-                ></Grid>
-              </Grid>
-            </Grid>
-          </Container>
         </Box>
       )}
 
@@ -170,18 +120,8 @@ export default function FooterBlock({ isFull }: showProps) {
                     <CardMedia
                       component="img"
                       image={imgfooterlogo}
-                      sx={{ width: "auto" }}
+                      sx={{ width: "200px" }}
                     />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Typography
-                      variant="subtitle1"
-                      sx={{ fontWeight: 400, color: "common.white" }}
-                    >
-                      Since 2017, More than 50K+ Developers trust the
-                      CodedThemes Digital Product. Mantis React is Manage under
-                      their Experienced Team Players.
-                    </Typography>
                   </Grid>
                 </Grid>
               </motion.div>
@@ -195,37 +135,13 @@ export default function FooterBlock({ isFull }: showProps) {
                       color={textColor}
                       sx={{ fontWeight: 500 }}
                     >
-                      Help
+                      Çalışma Saatleri
                     </Typography>
                     <Stack spacing={{ xs: 1.5, md: 2.5 }}>
-                      <FooterLink
-                        href="https://blog.mantisdashboard.io/"
-                        target="_blank"
-                        underline="none"
-                      >
-                        Blog
-                      </FooterLink>
-                      <FooterLink
-                        href="https://codedthemes.gitbook.io/mantis/"
-                        target="_blank"
-                        underline="none"
-                      >
-                        Documentation
-                      </FooterLink>
-                      <FooterLink
-                        href="https://codedthemes.gitbook.io/mantis/changelog"
-                        target="_blank"
-                        underline="none"
-                      >
-                        Change Log
-                      </FooterLink>
-                      <FooterLink
-                        href="https://codedthemes.support-hub.io/"
-                        target="_blank"
-                        underline="none"
-                      >
-                        Support
-                      </FooterLink>
+                      <Typography color={"white"}>Pazartesi-Cuma</Typography>
+                      <Typography color={"white"}>09.00 - 17.00</Typography>
+                      <Typography color={"white"}>Cumartesi - Pazar</Typography>
+                      <Typography color={"white"}>Kapalı</Typography>
                     </Stack>
                   </Stack>
                 </Grid>
@@ -236,7 +152,7 @@ export default function FooterBlock({ isFull }: showProps) {
                       color={textColor}
                       sx={{ fontWeight: 500 }}
                     >
-                      Store Help
+                      Site Haritası
                     </Typography>
                     <Stack spacing={{ xs: 1.5, md: 2.5 }}>
                       <FooterLink
@@ -244,25 +160,26 @@ export default function FooterBlock({ isFull }: showProps) {
                         target="_blank"
                         underline="none"
                       >
-                        License
+                        Neden Biz
                       </FooterLink>
                       <FooterLink
                         href="https://mui.com/store/customer-refund-policy/"
                         target="_blank"
                         underline="none"
                       >
-                        Refund Policy
+                        Tedarikçi Ol / Teklif Al
                       </FooterLink>
                       <FooterLink
                         href="https://support.mui.com/hc/en-us/sections/360002564979-For-customers"
                         target="_blank"
                         underline="none"
                       >
-                        Submit a Request
+                        İş Ortaklarımız
                       </FooterLink>
                     </Stack>
                   </Stack>
                 </Grid>
+
                 <Grid item xs={6} sm={3}>
                   <Stack spacing={{ xs: 3, md: 5 }}>
                     <Typography
@@ -270,40 +187,9 @@ export default function FooterBlock({ isFull }: showProps) {
                       color={textColor}
                       sx={{ fontWeight: 500 }}
                     >
-                      Mantis Eco-System
+                      İletişim
                     </Typography>
                     <Stack spacing={{ xs: 1.5, md: 2.5 }}>
-                      {frameworks.map((item, index) => (
-                        <FooterLink
-                          href={item.link}
-                          target="_blank"
-                          underline="none"
-                          key={index}
-                        >
-                          {item.title}
-                          {/* {item.isUpcoming && <Chip variant="outlined" size="small" label="Upcoming" sx={{ ml: 0.5 }} />} */}
-                        </FooterLink>
-                      ))}
-                    </Stack>
-                  </Stack>
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <Stack spacing={{ xs: 3, md: 5 }}>
-                    <Typography
-                      variant="h5"
-                      color={textColor}
-                      sx={{ fontWeight: 500 }}
-                    >
-                      More Products
-                    </Typography>
-                    <Stack spacing={{ xs: 1.5, md: 2.5 }}>
-                      <FooterLink
-                        href="http://mui.com/store/previews/berry-react-material-admin/"
-                        target="_blank"
-                        underline="none"
-                      >
-                        Berry React Material
-                      </FooterLink>
                       <FooterLink
                         href="https://mui.com/store/previews/berry-react-material-admin-free/"
                         target="_blank"

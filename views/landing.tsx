@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 'use client';
 
 import { useEffect, useState, ChangeEvent } from 'react';
@@ -5,7 +6,6 @@ import { useEffect, useState, ChangeEvent } from 'react';
 // material-ui
 import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import CardMedia from '@mui/material/CardMedia';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -19,10 +19,8 @@ import IconButton from '@/components/@extended/IconButton';
 import Hero from '@/sections/landing/Header';
 import NumberBlock from '@/sections/landing/NumberBlock';
 import BrowserBlock from '@/sections/landing/BrowserBlock';
-import CallToAction from '@/sections/landing/CallToAction';
 import FeatureBlock from '@/sections/landing/FeatureBlock';
 import DemoBlock from '@/sections/landing/DemoBlock';
-import TestimonialBlock from '@/sections/landing/TestimonialBlock';
 import ElementBlock from '@/sections/landing/ElementBlock';
 import PartnerBlock from '@/sections/landing/PartnerBlock';
 
@@ -53,7 +51,7 @@ export default function Landing() {
 
   useEffect(() => {
     const listenToScroll = () => {
-      let heightToHideFrom = 250;
+      const heightToHideFrom = 250;
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 
       if (winScroll > heightToHideFrom) {
@@ -163,7 +161,6 @@ export default function Landing() {
       <BrowserBlock />
       <ElementBlock />
       <PartnerBlock />
-      <TestimonialBlock />
       <Slide direction={theme.direction === ThemeDirection.RTL ? 'right' : 'left'} in={visible} mountOnEnter unmountOnExit>
         <MainCard
           sx={{

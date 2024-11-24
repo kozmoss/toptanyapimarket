@@ -1,94 +1,99 @@
 // material-ui
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import CardMedia from '@mui/material/CardMedia';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import { useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 // third party
-import { motion } from 'framer-motion';
 
 // project import
-import { ThemeMode } from '@/app/config';
-import useConfig from '@/hooks/useConfig';
+import { ThemeMode } from "@/app/config";
+import useConfig from "@/hooks/useConfig";
 
 // assets
-import CheckCircleOutlined from '@ant-design/icons/CheckCircleOutlined';
-const imgelementmsg = 'assets/images/landing/img-element-msg.png';
-const imgelementwidget = 'assets/images/landing/img-element-widget.png';
+import CheckCircleOutlined from "@ant-design/icons/CheckCircleOutlined";
 
 // ==============================|| LANDING - ELEMENT PAGE ||============================== //
 
 export default function ElementBlock() {
   const theme = useTheme();
-  const { mode, presetColor } = useConfig();
+  const { mode } = useConfig();
 
-  const checkIcon = <CheckCircleOutlined style={{ color: theme.palette.primary.main, fontSize: '1.15rem' }} />;
+  const checkIcon = (
+    <CheckCircleOutlined
+      style={{ color: theme.palette.primary.main, fontSize: "1.15rem" }}
+    />
+  );
 
   return (
     <Box
       sx={{
-        overflowX: 'hidden',
-        position: 'relative',
-        '&:after': {
+        overflowX: "hidden",
+        position: "relative",
+        "&:after": {
           content: '""',
-          position: 'absolute',
-          width: '100%',
-          height: '45%',
+          position: "absolute",
+          width: "100%",
+          height: "45%",
           bottom: 0,
           left: 0,
-          bgcolor: mode === ThemeMode.DARK ? 'grey.100' : 'secondary.800',
-          [theme.breakpoints.down('sm')]: { height: '60%' }
+          bgcolor: mode === ThemeMode.DARK ? "grey.100" : "secondary.800",
+          [theme.breakpoints.down("sm")]: { height: "60%" },
         },
-        '@keyframes slideY': {
-          '0%': {
-            transform: 'translateY(0px)'
+        "@keyframes slideY": {
+          "0%": {
+            transform: "translateY(0px)",
           },
-          '50%': {
-            transform: 'translateY(0px)'
+          "50%": {
+            transform: "translateY(0px)",
           },
-          '100%': {
-            transform: 'translateY(0px)'
+          "100%": {
+            transform: "translateY(0px)",
           },
-          '25%': {
-            transform: 'translateY(-20px)'
+          "25%": {
+            transform: "translateY(-20px)",
           },
-          '75%': {
-            transform: 'translateY(20px)'
-          }
-        }
+          "75%": {
+            transform: "translateY(20px)",
+          },
+        },
       }}
     >
-      <Container sx={{ position: 'relative', zIndex: 1 }}>
-        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 } }}>
+      <Container sx={{ position: "relative", zIndex: 1 }}>
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="center"
+          spacing={2}
+          sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 } }}
+        >
           <Grid item xs={12}>
-            <Grid container spacing={1} justifyContent="center" sx={{ mb: 4, textAlign: 'center' }}>
+            <Grid
+              container
+              spacing={1}
+              justifyContent="center"
+              sx={{ mb: 4, textAlign: "center" }}
+            >
               <Grid item sm={10} md={6}>
                 <Grid container spacing={1} justifyContent="center">
                   <Grid item xs={12}>
                     <Typography variant="h2">
-                      Create Beautiful Yet Powerful
-                      <Box sx={{ display: 'block' }}>
-                        <Box component="span" sx={{ mr: 1, color: 'primary.main' }}>
-                          web apps
-                        </Box>
-                        with Mantis React
-                      </Box>
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Typography variant="body1">
-                      Create your powerful backend project using powerful design system of Mantis React Template.
+                      Projelere Hayat, Nalburlara{" "}
+                      <Box
+                        component="span"
+                        sx={{ mr: 1, color: "primary.main" }}
+                      >
+                        Güven
+                      </Box>{" "}
+                      Taşırız!
                     </Typography>
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={9}>
-        
-          </Grid>
+          <Grid item xs={9}></Grid>
           <Grid item xs={9}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={4}>
@@ -96,7 +101,7 @@ export default function ElementBlock() {
                   <Grid item>{checkIcon}</Grid>
                   <Grid item xs zeroMinWidth>
                     <Typography variant="body1" color="secondary">
-                      Auth Methods : JWT, Auth0, Firebase
+                      Ürün Çeşitliliği
                     </Typography>
                   </Grid>
                 </Grid>
@@ -106,7 +111,7 @@ export default function ElementBlock() {
                   <Grid item>{checkIcon}</Grid>
                   <Grid item xs zeroMinWidth>
                     <Typography variant="body1" color="secondary">
-                      Internationalization Support
+                     Tüm Ürünler Tek Fatura
                     </Typography>
                   </Grid>
                 </Grid>
@@ -116,7 +121,7 @@ export default function ElementBlock() {
                   <Grid item>{checkIcon}</Grid>
                   <Grid item xs zeroMinWidth>
                     <Typography variant="body1" color="secondary">
-                      Mock API
+                      Ürün Kıyaslama
                     </Typography>
                   </Grid>
                 </Grid>
@@ -126,7 +131,7 @@ export default function ElementBlock() {
                   <Grid item>{checkIcon}</Grid>
                   <Grid item xs zeroMinWidth>
                     <Typography variant="body1" color="secondary">
-                      Code Splitting
+                      Fiyat Kıyaslama
                     </Typography>
                   </Grid>
                 </Grid>
@@ -136,7 +141,7 @@ export default function ElementBlock() {
                   <Grid item>{checkIcon}</Grid>
                   <Grid item xs zeroMinWidth>
                     <Typography variant="body1" color="secondary">
-                      React Hooks
+                      Fabrikadan Teslim
                     </Typography>
                   </Grid>
                 </Grid>
@@ -146,7 +151,7 @@ export default function ElementBlock() {
                   <Grid item>{checkIcon}</Grid>
                   <Grid item xs zeroMinWidth>
                     <Typography variant="body1" color="secondary">
-                      Google Fonts
+                      Hızlı Sevkiyat
                     </Typography>
                   </Grid>
                 </Grid>
@@ -156,7 +161,7 @@ export default function ElementBlock() {
                   <Grid item>{checkIcon}</Grid>
                   <Grid item xs zeroMinWidth>
                     <Typography variant="body1" color="secondary">
-                      RTL Support
+                      Güvenli Ödeme
                     </Typography>
                   </Grid>
                 </Grid>
@@ -166,7 +171,7 @@ export default function ElementBlock() {
                   <Grid item>{checkIcon}</Grid>
                   <Grid item xs zeroMinWidth>
                     <Typography variant="body1" color="secondary">
-                      Light/Dark, Semi Dark Support
+                      Alanında Uzman Personel
                     </Typography>
                   </Grid>
                 </Grid>
@@ -176,7 +181,7 @@ export default function ElementBlock() {
                   <Grid item>{checkIcon}</Grid>
                   <Grid item xs zeroMinWidth>
                     <Typography variant="body1" color="secondary">
-                      Prettier Code Style
+                      Sektörde 20+ Yıl Tecrübe 
                     </Typography>
                   </Grid>
                 </Grid>

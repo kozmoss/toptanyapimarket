@@ -2,127 +2,24 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 
 // third party
-import Slider, { Settings } from "react-slick";
 
 // project import
-import MainCard from "@/components/MainCard";
 
 // assets
-const imgfeature1 = "assets/images/landing/img-user1.svg";
 
 // ================================|| TESTIMONIAL - ITEMS ||================================ //
 
-interface Props {
-  item: {
-    image: string;
-    title: string;
-    review: string;
-    rating: number;
-    client: string;
-  };
-}
 
-function Item({ item }: Props) {
-  return (
-    <MainCard sx={{ mx: 2 }} contentSX={{ p: 3 }}>
-      <Grid container spacing={1}>
-        <Grid item></Grid>
-        <Grid item sm zeroMinWidth>
-          <Grid container spacing={1}>
-            <Grid item xs={12}>
-              <Typography variant="h5" sx={{ fontWeight: 600 }}>
-                {item.title}
-              </Typography>
-              <Rating
-                name="read-only"
-                readOnly
-                value={item.rating}
-                size="small"
-                precision={0.5}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="body1" color="secondary">
-                {item.review}
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="subtitle2">{item.client}</Typography>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-    </MainCard>
-  );
-}
+
 
 // ==============================|| LANDING - TESTIMONIAL PAGE ||============================== //
 
 export default function TestimonialBlock() {
-  const settings: Settings = {
-    autoplay: true,
-    arrows: false,
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
-  const items = [
-    {
-      image: imgfeature1,
-      title: "Güven Boya",
-      review:
-          "Yalan yorum1", 
-      rating: 5,
-      client: "Vahid Tokmak.",
-    },
-    {
-      image: imgfeature1,
-      title: "Portline Makine",
-      review:
-        "Yorum2",
-      rating: 5,
-      client: "Samet Özarslan",
-    },
-    {
-      image: imgfeature1,
-      title: "Design Quality",
-      review:
-        "there is no mistake, great design and organized code, thank you ...",
-      rating: 4,
-      client: "Yang Z.",
-    },
-    {
-      image: imgfeature1,
-      title: "Code Quality",
-      review:
-        "Fantastic design and good code quality. Its a great starting point for any new project. They provide plenty of premade components, page views, and authentication options. Definitely the best Ive found for Material UI in Typescript",
-      rating: 5,
-      client: "Felipe F.",
-    },
-    {
-      image: imgfeature1,
-      title: "Code Quality ",
-      review:
-        "Great template. Very well written code and good structure. Very customizable and tons of nice components. Good documentation. Team is very responsive too.",
-      rating: 5,
-      client: "Besart M.",
-    },
-    {
-      image: imgfeature1,
-      title: "Code Quality",
-      review:
-        "We are just getting started with this new theme, but we liked it enough that we decided to import our application into this codebase rather than the other way around. Impressive number of custom components and original work VS some other themes that seem to just be repackaged versions of Material UI.",
-      rating: 5,
-      client: "Oxbird",
-    },
-  ];
+
   return (
     <Box sx={{ overflowX: "hidden" }}>
       <Container>
@@ -156,11 +53,7 @@ export default function TestimonialBlock() {
             xs={12}
             sx={{ "& .slick-list": { overflow: "visible" } }}
           >
-            <Slider {...settings}>
-              {items.map((item, index) => (
-                <Item key={index} item={item} />
-              ))}
-            </Slider>
+       
           </Grid>
         </Grid>
       </Container>

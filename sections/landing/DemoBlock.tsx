@@ -1,5 +1,4 @@
 // next
-import Image from "next/image";
 import NextLink from "next/link";
 
 // material-ui
@@ -17,7 +16,6 @@ import AnimateButton from "@/components/@extended/AnimateButton";
 
 // assets
 import SendOutlined from "@ant-design/icons/SendOutlined";
-
 
 // ==============================|| LANDING - DEMO PAGE ||============================== //
 
@@ -42,14 +40,8 @@ export default function DemoBlock() {
               <Grid container spacing={1} justifyContent="center">
                 <Grid item xs={12}>
                   <Typography variant="h2" sx={{ mb: 2 }}>
-                    Sizde Ürünlerinizin ToptanYapıMarket'te satılmasınız ister
+                    Sizde Ürünlerinizin ToptanYapıMarket&apos;te satılmasınız ister
                     misiniz?
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography variant="body1">
-                    Whether you are developer or designer, Mantis serve the need
-                    of all - No matter you are novice or expert
                   </Typography>
                 </Grid>
               </Grid>

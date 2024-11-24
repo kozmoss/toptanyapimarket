@@ -1,13 +1,9 @@
 // next
-import NextLink from 'next/link';
-import Image from 'next/image';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
@@ -15,12 +11,9 @@ import Typography from '@mui/material/Typography';
 import { motion } from 'framer-motion';
 
 // project import
-import AnimateButton from '@/components/@extended/AnimateButton';
 
 // assets
-import EyeOutlined from '@ant-design/icons/EyeOutlined';
 
-const headertechimg = '/assets/images/landing/img-headertech.svg';
 
 // ==============================|| LANDING - HEADER PAGE ||============================== //
 
@@ -51,11 +44,10 @@ export default function HeaderPage() {
                     lineHeight: { xs: 1.3, sm: 1.3, md: 1.3 }
                   }}
                 >
-                  <span>İhtayacınız Olan Tüm Ürünler </span>
+                  <span>En Uygun Ürünler </span>
                   <Box component="span" sx={{ color: 'primary.main' }}>
-                    <span>Toptan Yapı Market'te </span>
+                    <div> En Uygun Fiyatlarla </div>
                   </Box>
-                  <span>Hemen Bizimle Alışverişe Başla</span>
                 </Typography>
               </motion.div>
             </Grid>

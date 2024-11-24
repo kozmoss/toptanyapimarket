@@ -3,30 +3,15 @@ import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 
 // third party
 import Marquee from "react-fast-marquee";
 
 // project import
-import Animation from "./Animation";
-import { ThemeDirection, ThemeMode } from "@/app/config";
+import { ThemeDirection } from "@/app/config";
 
-// assets
-const techCI = "assets/images/landing/technology/tech-ci.png";
-const techAngular = "assets/images/landing/technology/tech-angular.png";
-const techBootstrap = "assets/images/landing/technology/tech-bootstrap.png";
-const techDotnet = "assets/images/landing/technology/tech-dot-net.png";
-const techVue = "assets/images/landing/technology/tech-vue.png";
 
-const techCIDark = "assets/images/landing/technology/tech-ci-dark.png";
-const techAngularDark =
-  "assets/images/landing/technology/tech-angular-dark.png";
-const techBootstrapDark =
-  "assets/images/landing/technology/tech-bootstrap-dark.png";
-const techDotnetDark = "assets/images/landing/technology/tech-dot-net-dark.png";
-const techVueDark = "assets/images/landing/technology/tech-vue-dark.png";
 
 // ================================|| SLIDER - ITEMS ||================================ //
 
@@ -54,53 +39,27 @@ function Item({ item }: { item: { text: string; highlight?: boolean } }) {
 export default function PartnerBlock() {
   const theme = useTheme();
 
-  const partnerimage = [
-    {
-      image: theme.palette.mode === ThemeMode.DARK ? techCIDark : techCI,
-      link: "https://codedthemes.com/item/mantis-codeigniter-admin-template/",
-    },
-    {
-      image:
-        theme.palette.mode === ThemeMode.DARK ? techAngularDark : techAngular,
-      link: "https://codedthemes.com/item/mantis-angular-admin-template/",
-    },
-    {
-      image:
-        theme.palette.mode === ThemeMode.DARK
-          ? techBootstrapDark
-          : techBootstrap,
-      link: "https://codedthemes.com/item/mantis-bootstrap-admin-dashboard/",
-    },
-    {
-      image:
-        theme.palette.mode === ThemeMode.DARK ? techDotnetDark : techDotnet,
-      link: "https://codedthemes.com/item/mantis-dotnet-bootstrap-dashboard-template/",
-    },
-    {
-      image: theme.palette.mode === ThemeMode.DARK ? techVueDark : techVue,
-      link: "https://codedthemes.com/item/mantis-vue-admin-template/",
-    },
-  ];
-
   const items = [
-    { text: "Auth Methods" },
-    { text: "150+ Pages" },
-    { text: "6+ Preset Colors" },
-    { text: "50+ Widgets" },
-    { text: "Best User Experience" },
-    { text: "Live Customizer" },
-    { text: "5+ Apps" },
-    { text: "Material UI v5" },
-    { text: "Highly Flexible" },
-    { text: "Always Updated" },
-    { text: "Professional Design" },
-    { text: "TypeScript Support" },
-    { text: "Figma Design" },
-    { text: "Dark Layout" },
-    { text: "RTL Support" },
-    { text: "Retina Ready" },
-    { text: "Prettier Code" },
-    { text: "i18n Support" },
+    { text: "Marshall" },
+    { text: "P.S.A" },
+    { text: "Polisan" },
+    { text: "Knauf" },
+    { text: "Dünya Dekor" },
+    { text: "Beybi" },
+    { text: "Best Sprey" },
+    { text: "Fırat" },
+    { text: "Akfix" },
+    { text: "Dekor" },
+    { text: "Makita" },
+    { text: "Rodex" },
+    { text: "Yaparlar" },
+    { text: "Karbosan" },
+    { text: "İzeltaş" },
+    { text: "Stargil" },
+    { text: "Atlas" },
+    { text: "İsonem" },
+    { text: "Bay-Tec" },
+    { text: "Eltos" },
   ];
 
   return (
