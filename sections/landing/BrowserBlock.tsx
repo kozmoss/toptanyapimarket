@@ -1,35 +1,59 @@
 // material-ui
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
+import Carousel from "react-material-ui-carousel";
+import image1 from "@/public/assets/images/banner1.png";
+import image2 from "@/public/assets/images/banner2.png";
 
 // third-party
-import { ReactCompareSlider, ReactCompareSliderImage, ReactCompareSliderHandle } from 'react-compare-slider';
 
 // project import
-import useConfig from '@/hooks/useConfig';
+
+import Image from "next/image";
 
 // ==============================|| LANDING - BROWSER  PAGE ||============================== //
 
 export default function BrowserBlockPage() {
-  const theme = useTheme();
-  const { presetColor } = useConfig();
+  const items = [
+    {
+      src: image1,
+      description: "Hello World!",
+    },
+    {
+      src: image2,
+      description: "Hello World!",
+    },
+  ];
 
   return (
-    <Box sx={{ position: 'relative', '& .ReactCompareSlider': { direction: theme.direction } }}>
-      <ReactCompareSlider
-        handle={
-          <ReactCompareSliderHandle
-            buttonStyle={{
-              backdropFilter: undefined,
-              background: theme.palette.common.white,
-              border: 0,
-              color: '#333'
-            }}
+    <Carousel
+      autoPlay={true}
+      interval={3000}
+      timeout={1000}
+      indicatorIconButtonProps={{
+        style: {
+          padding: "10px",
+          color: "",
+        },
+      }}
+    >
+      {items?.map((item, i) => (
+        <Box
+          key={i}
+          sx={{
+            width: "90%",
+            height: 500,
+            overflow: "hidden",
+          }}
+        >
+          <Image
+            src={item.src}
+            alt={item.description}
+            layout="fill"
+            objectFit="contain"
+            // Resmi tamamen sığdır
           />
-        }
-        itemOne={<ReactCompareSliderImage src={`/assets/images/landing/${presetColor}-dark.jpg`} />}
-        itemTwo={<ReactCompareSliderImage src={`/assets/images/landing/${presetColor}-light.jpg`} />}
-      />
-    </Box>
+        </Box>
+      ))}
+    </Carousel>
   );
 }

@@ -12,7 +12,6 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Chip from "@mui/material/Chip";
 import Container from "@mui/material/Container";
 import Drawer from "@mui/material/Drawer";
 import Link from "@mui/material/Link";
@@ -25,7 +24,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
 // project import
-import logo from "@/public/assets/images/logo.png"
+import logo from "@/public/assets/images/logo.png";
 import Image from "next/image";
 import IconButton from "@/components/@extended/IconButton";
 import AnimateButton from "@/components/@extended/AnimateButton";
@@ -40,7 +39,7 @@ import LineOutlined from "@ant-design/icons/LineOutlined";
 
 // elevation scroll
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function ElevationScroll({ children, window }:any) {
+function ElevationScroll({ children, window }: any) {
   const theme = useTheme();
 
   const trigger = useScrollTrigger({
@@ -103,7 +102,6 @@ export default function Header() {
                   alt="toptanlogo"
                 ></Image>
               </Typography>
-      
             </Stack>
             <Stack
               direction="row"
@@ -117,7 +115,7 @@ export default function Header() {
               spacing={2}
             >
               <NextLink
-                href="/components-overview/buttons"
+                href=""
                 passHref
                 legacyBehavior
               >
@@ -128,7 +126,7 @@ export default function Header() {
               <Link
                 className="header-link"
                 color="white"
-                href="https://codedthemes.gitbook.io/mantis/"
+                href=""
                 target="_blank"
                 underline="none"
               >
@@ -138,7 +136,7 @@ export default function Header() {
                 <AnimateButton>
                   <Button
                     component={Link}
-                    href="https://mui.com/store/items/mantis-react-admin-dashboard-template/"
+                    href=""
                     disableElevation
                     color="primary"
                     variant="contained"
@@ -165,20 +163,6 @@ export default function Header() {
                 ></Image>
               </Typography>
               <Stack direction="row" spacing={2} alignItems="center">
-                <NextLink
-                  href="/components-overview/buttons"
-                  passHref
-                  legacyBehavior
-                >
-                  <Button
-                    variant="outlined"
-                    size="small"
-                    color="warning"
-                    sx={{ height: 28 }}
-                  >
-                    All Components
-                  </Button>
-                </NextLink>
                 <IconButton
                   color="secondary"
                   onClick={drawerToggler(true)}
@@ -230,7 +214,7 @@ export default function Header() {
                           <LineOutlined />
                         </ListItemIcon>
                         <ListItemText
-                          primary="All Components"
+                          primary="Tedarikçi Ol"
                           primaryTypographyProps={{
                             variant: "h6",
                             color: "text.primary",
@@ -240,7 +224,7 @@ export default function Header() {
                     </Link>
                     <Link
                       underline="none"
-                      href="https://github.com/codedthemes/mantis-free-react-admin-template"
+                      href=""
                       target="_blank"
                     >
                       <ListItemButton>
@@ -248,67 +232,12 @@ export default function Header() {
                           <LineOutlined />
                         </ListItemIcon>
                         <ListItemText
-                          primary="Free Version"
+                          primary="Teklif Al"
                           primaryTypographyProps={{
                             variant: "h6",
                             color: "text.primary",
                           }}
                         />
-                      </ListItemButton>
-                    </Link>
-                    <Link
-                      underline="none"
-                      href="https://codedthemes.gitbook.io/mantis/"
-                      target="_blank"
-                    >
-                      <ListItemButton>
-                        <ListItemIcon>
-                          <LineOutlined />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary="Documentation"
-                          primaryTypographyProps={{
-                            variant: "h6",
-                            color: "text.primary",
-                          }}
-                        />
-                      </ListItemButton>
-                    </Link>
-                    <Link
-                      underline="none"
-                      href="https://codedthemes.support-hub.io/"
-                      target="_blank"
-                    >
-                      <ListItemButton>
-                        <ListItemIcon>
-                          <LineOutlined />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary="Support"
-                          primaryTypographyProps={{
-                            variant: "h6",
-                            color: "text.primary",
-                          }}
-                        />
-                      </ListItemButton>
-                    </Link>
-                    <Link
-                      underline="none"
-                      href="https://mui.com/store/items/mantis-react-admin-dashboard-template/"
-                      target="_blank"
-                    >
-                      <ListItemButton>
-                        <ListItemIcon>
-                          <LineOutlined />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary="Purchase Now"
-                          primaryTypographyProps={{
-                            variant: "h6",
-                            color: "text.primary",
-                          }}
-                        />
-                        <Chip color="primary" label="v1.0" size="small" />
                       </ListItemButton>
                     </Link>
                   </List>

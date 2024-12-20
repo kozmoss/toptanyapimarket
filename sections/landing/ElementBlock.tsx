@@ -35,7 +35,7 @@ export default function ElementBlock() {
           content: '""',
           position: "absolute",
           width: "100%",
-          height: "45%",
+          height: "100%",
           bottom: 0,
           left: 0,
           bgcolor: mode === ThemeMode.DARK ? "grey.100" : "secondary.800",
@@ -78,7 +78,7 @@ export default function ElementBlock() {
               <Grid item sm={10} md={6}>
                 <Grid container spacing={1} justifyContent="center">
                   <Grid item xs={12}>
-                    <Typography variant="h2">
+                    <Typography variant="h2" color={"white"}>
                       Projelere Hayat, Nalburlara{" "}
                       <Box
                         component="span"
