@@ -5,9 +5,11 @@ import { ReactElement } from "react";
 // next
 
 // project import
+import Snackbar from "@/components/@extended/Snackbar";
 import ThemeCustomization from "@/themes";
 
 import ScrollTop from "@/components/ScrollTop";
+import Notistack from "@/components/third-party/Notistack";
 
 import { ConfigProvider } from "@/contexts/ConfigContext";
 
@@ -21,7 +23,10 @@ export default function ProviderWrapper({
   return (
     <ConfigProvider>
       <ThemeCustomization>
-        <ScrollTop>{children}</ScrollTop>
+        <Notistack>
+          <Snackbar />
+          <ScrollTop>{children}</ScrollTop>
+        </Notistack>
       </ThemeCustomization>
     </ConfigProvider>
   );

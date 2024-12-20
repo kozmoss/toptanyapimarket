@@ -5,6 +5,7 @@ import './globals.css';
 // PROJECT IMPORTS
 import ProviderWrapper from './ProviderWrapper';
 
+
 export const metadata: Metadata = {
   title: 'Toptan Yapı Market',
   description: 'Toptan Yapı Market'

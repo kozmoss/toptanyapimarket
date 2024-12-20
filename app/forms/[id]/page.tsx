@@ -7,7 +7,8 @@ import Grid from "@mui/material/Grid";
 import InputLabel from "@mui/material/InputLabel";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
-
+import { v4 as uuidv4 } from "uuid";
+import { useRouter } from "next/navigation";
 // third-party
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -18,6 +19,9 @@ import * as yup from "yup";
 
 import MainCard from "@/components/MainCard";
 import Box from "@mui/material/Box";
+import addData from "@/lib/firebase/addForm";
+import { SnackbarProps } from "@/types/snackbar";
+import { openSnackbar } from "@/api/snackbar";
 
 const validationSchemas = {
   bayiOl: yup.object({
@@ -43,6 +47,37 @@ export default function GoogleMapAutocomplete({
 }: {
   params: { id: number };
 }) {
+
+
+  const router = useRouter();
+
+  const handleSubmit = async (values: unknown) => {
+    const response = await addData(id == 1 ? "bayi" : "teklif", uuid, values);
+    if (response.result?.success) {
+      openSnackbar({
+        open: true,
+        anchorOrigin: { vertical: 'top', horizontal: 'right' },
+        message: response.result.message,
+        variant: "alert",
+        alert: {
+          color: "success",
+        },
+      } as SnackbarProps);
+      router.push("/")
+    } else {
+      openSnackbar({
+        open: true,
+        anchorOrigin: { vertical: 'top', horizontal: 'right' },
+        message: "İşlem Sırasında Hata alındı.",
+        variant: "alert",
+        alert: {
+          color: "error",
+        },
+      } as SnackbarProps);
+    }
+  };
+
+  const uuid = uuidv4();
   const id = params.id;
   const formik = useFormik({
     initialValues:
@@ -64,9 +99,10 @@ export default function GoogleMapAutocomplete({
     validationSchema:
       id == 1 ? validationSchemas.bayiOl : validationSchemas.teklifAl,
     onSubmit: async (values) => {
-      console.log("Submitted Values:", values);
+      handleSubmit(values)
     },
   });
+
 
   return (
     <Box
@@ -243,7 +279,8 @@ export default function GoogleMapAutocomplete({
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={
-                          formik.touched.firmName2 && Boolean(formik.errors.firmName2)
+                          formik.touched.firmName2 &&
+                          Boolean(formik.errors.firmName2)
                         }
                         helperText={
                           formik.touched.firmName2 && formik.errors.firmName2
@@ -254,7 +291,7 @@ export default function GoogleMapAutocomplete({
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <Stack spacing={1}>
-                      <InputLabel>City</InputLabel>
+                      <InputLabel>Şehir</InputLabel>
                       <TextField
                         id="city2"
                         name="city2"
@@ -299,7 +336,8 @@ export default function GoogleMapAutocomplete({
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={
-                          formik.touched.surname2 && Boolean(formik.errors.surname2)
+                          formik.touched.surname2 &&
+                          Boolean(formik.errors.surname2)
                         }
                         helperText={
                           formik.touched.surname2 && formik.errors.surname2
@@ -332,10 +370,9 @@ export default function GoogleMapAutocomplete({
                       <TextField
                         id="outlined-multiline-static"
                         fullWidth
-                        placeholder="Multiline"
+                        placeholder="Ürün Hakkında Bilgiler..."
                         multiline
                         rows={5}
-                        defaultValue="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text"
                       />
                     </Stack>
                   </Grid>

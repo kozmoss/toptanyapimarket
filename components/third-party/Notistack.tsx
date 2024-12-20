@@ -5,8 +5,8 @@ import { styled } from '@mui/material/styles';
 import { SnackbarProvider } from 'notistack';
 
 // project import
-import Loader from 'components/Loader';
-import { useGetSnackbar } from 'api/snackbar';
+import Loader from '@/components/Loader';
+import { useGetSnackbar } from '@/api/snackbar';
 
 // assets
 import CheckCircleOutlined from '@ant-design/icons/CheckCircleOutlined';
@@ -35,6 +35,7 @@ const StyledSnackbarProvider = styled(SnackbarProvider)(({ theme }) => ({
 
 // ===========================|| SNACKBAR - NOTISTACK ||=========================== //
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Notistack({ children }: any) {
   const { snackbar } = useGetSnackbar();
   const iconSX = { marginRight: 8, fontSize: '1.15rem' };
