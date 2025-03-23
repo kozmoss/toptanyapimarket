@@ -16,6 +16,7 @@ export interface CustomFile extends File {
 export interface UploadProps extends DropzoneOptions {
   error?: boolean;
   file: CustomFile[] | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setFieldValue: (field: string, value: any) => void;
   sx?: SxProps<Theme>;
 }
@@ -29,6 +30,7 @@ export interface UploadMultiFileProps extends DropzoneOptions {
   onUpload?: VoidFunction;
   onRemove?: (file: File | string) => void;
   onRemoveAll?: VoidFunction;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setFieldValue: (field: string, value: any) => void;
 }
 

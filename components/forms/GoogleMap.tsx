@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 
 // material-ui
@@ -45,6 +46,7 @@ interface PlaceType {
 
 // ==============================|| GOOGLE MAP - AUTOCOMPLETE ||============================== //
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function GoogleMaps({ formik, disabled }: any) {
   const [value, setValue] = React.useState<PlaceType | null>(null);
   const [inputValue, setInputValue] = React.useState("");
@@ -70,6 +72,7 @@ export default function GoogleMaps({ formik, disabled }: any) {
           request: { input: string },
           callback: (results?: readonly PlaceType[]) => void,
         ) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (autocompleteService.current as any).getPlacePredictions(
             { ...request, componentRestrictions: { country: "uk" } },
             callback,
@@ -82,9 +85,10 @@ export default function GoogleMaps({ formik, disabled }: any) {
 
   React.useEffect(() => {
     let active = true;
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     if (!autocompleteService.current && (window as any).google) {
       autocompleteService.current = new (
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         window as any
       ).google.maps.places.AutocompleteService();
     }
@@ -133,12 +137,15 @@ export default function GoogleMaps({ formik, disabled }: any) {
       filterSelectedOptions
       disabled={disabled}
       value={value}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       onChange={(event: any, newValue: PlaceType | null) => {
         setOptions(newValue ? [newValue, ...options] : options);
         setValue(newValue);
         let address1: string = "";
         getGeocode({ address: newValue?.description })
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
           .then((results: any) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             results[0].address_components.filter((locData: any) => {
               if (locData.types[0] === "route") {
                 if (locData.long_name !== undefined)

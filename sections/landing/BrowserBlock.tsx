@@ -28,7 +28,7 @@ export default function BrowserBlockPage() {
     <Carousel
       autoPlay={true}
       interval={3000}
-      timeout={1000}
+      duration={2000}
       indicatorIconButtonProps={{
         style: {
           padding: "10px",

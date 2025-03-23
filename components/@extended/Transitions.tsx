@@ -16,7 +16,7 @@ interface Props {
   in?: boolean;
   type?: string;
   direction?: 'up' | 'right' | 'left' | 'down';
-  [others: string]: any;
+  [others: string]: unknown;
 }
 
 function transitions({ children, position = 'top-left', type = 'grow', direction = 'up', ...others }: Props, ref: Ref<ExoticComponent>) {

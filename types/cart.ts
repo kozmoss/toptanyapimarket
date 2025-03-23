@@ -1,7 +1,7 @@
-import { KeyedObject } from 'types/root';
+import { KeyedObject } from '@/types/root';
 
 export type KeyedObjects = {
-  [key: string]: string | number | KeyedObject | any;
+  [key: string]: string | number | KeyedObject | unknown;
 };
 
 export interface CartCheckoutStateProps {
